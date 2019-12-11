@@ -17,6 +17,11 @@ module.exports = client => async (timestamp, force = false) => {
     process.exit(1);
   }
 
+  if (files.length === 0) {
+    console.error(`No backups found with timestamp "${timestamp}"`);
+    process.exit(1);
+  }
+
   const progress = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
 
   console.log(`\nRestoring files from backup "${timestamp}"...\n`);

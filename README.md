@@ -40,6 +40,14 @@ This command will restore files to their original locations using the original b
 file-backup restore 1576073346726
 ```
 
+**List command**
+
+This command will list all backups with their timestamps and date of backup.
+
+```bash
+file-backup list
+```
+
 ### Contributing (Quick Start)
 
 Requires node v12.13

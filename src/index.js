@@ -4,6 +4,7 @@ require('./bootstrap').then(async client => {
   program.version('0.0.1');
   program.command('backup <backupDirectory>').action(require('./commands/backup')(client));
   program.command('restore <timestamp>').action(require('./commands/restore')(client));
+  program.command('list').action(require('./commands/list')(client));
   program.parse(process.argv);
 }).catch(err => {
   console.error(err);
