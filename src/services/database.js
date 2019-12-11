@@ -1,3 +1,4 @@
+require('sqlite3');
 const {Sequelize, Model, DataTypes} = require('sequelize');
 const config = require('../../config');
 

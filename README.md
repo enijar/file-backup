@@ -10,6 +10,8 @@ File backup service written in NodeJS. Backs up files to another location on the
 - [ ] Remote file backup
 - [ ] Remote file restore
 - [ ] Make config configurable by user
+- [ ] 100% test coverage
+- [ ] Automate release cycle
 
 ### Installation (MacOS)
 
@@ -39,7 +41,7 @@ file-backup restore 1576073346726
 
 ### Contributing (Quick Start)
 
-Requires node v12.13.1
+Requires node v12.13
 
 ```bash
 npm install

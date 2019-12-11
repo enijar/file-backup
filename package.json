@@ -1,11 +1,18 @@
 {
   "private": true,
   "name": "file-backup",
-  "bin": {
-    "main": "src/index.js"
+  "bin": "src/index.js",
+  "pkg": {
+    "assets": [
+      "bindings/**/*"
+    ],
+    "targets": [
+      "node12-macos-x64"
+    ]
   },
   "scripts": {
-    "package": "npx pkg . --out-path dist"
+    "package": "npx pkg . --out-path dist",
+    "release": "./bin/release.sh"
   },
   "dependencies": {
     "cli-progress": "^3.4.0",
