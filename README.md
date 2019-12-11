@@ -17,7 +17,7 @@ File backup service written in NodeJS. Backs up files to another location on the
 ### Installation (MacOS)
 
 ```bash
-curl -L -o file-backup https://github.com/Enijar/file-backup/releases/download/0.0.1/file-backup-macos
+curl -L -o file-backup https://github.com/Enijar/file-backup/releases/download/0.0.1/file-backup
 chmod +x file-backup
 mv file-backup /usr/local/bin/file-backup
 ```
