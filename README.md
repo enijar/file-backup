@@ -19,3 +19,14 @@ file-backup backup ~/Documents
 ```bash
 file-backup restore 1576073346726
 ```
+
+### Contributing (Quick Start)
+
+Requires node v12.13.1
+
+```bash
+npm install
+npm run package
+```
+
+Inside the dist directory will be three files: one for Windows, one of Linux, and one for MacOS.
