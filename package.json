@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "dependencies": {
+    "cli-progress": "^3.4.0",
+    "commander": "^4.0.1",
+    "csv-writer": "^1.5.0",
+    "lodash": "^4.17.15",
+    "sequelize": "^5.21.2",
+    "sqlite3": "^4.1.1",
+    "uuid": "^3.3.3",
+    "xxhash": "^0.3.0"
+  }
+}
