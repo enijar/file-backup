@@ -27,6 +27,14 @@ class Client extends Model {
 
 Client.init({
   uuid: DataTypes.STRING,
+  backupDir: {
+    type: DataTypes.STRING(1024),
+    defaultValue: config.defaultBackupDir,
+  },
+  backupLimit: {
+    type: DataTypes.INTEGER,
+    defaultValue: 60,
+  },
 }, {sequelize, timestamps: true});
 
 module.exports = {

@@ -1,10 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const config = require('../../config');
 
 module.exports = {
-  make(filePath, fileName, timestamp) {
-    const backupDir = path.join(config.paths.backup, String(timestamp));
+  async make(filePath, fileName, backupDir) {
     const backupLocation = path.join(backupDir, fileName);
 
     if (!fs.existsSync(backupDir)) {
