@@ -6,6 +6,7 @@ File backup service written in NodeJS. Backs up files to another location on the
 
 - [x] Backup command
 - [x] Restore command
+- [ ] Make tarballs from directories instead of multiple files
 - [ ] Remote file backup
 - [ ] Remote file restore
 
