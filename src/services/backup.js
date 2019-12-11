@@ -3,17 +3,12 @@ const path = require('path');
 const config = require('../../config');
 
 module.exports = {
-  make(filePath, fileName, uuid, timestamp) {
-    const uuidDir = path.join(config.backupFilePath, uuid);
-    const timestampDir = path.join(uuidDir, String(timestamp));
-    const backupLocation = path.join(timestampDir, fileName);
+  make(filePath, fileName, timestamp) {
+    const backupDir = path.join(config.paths.backup, String(timestamp));
+    const backupLocation = path.join(backupDir, fileName);
 
-    if (!fs.existsSync(uuidDir)) {
-      fs.mkdirSync(uuidDir);
-    }
-
-    if (!fs.existsSync(timestampDir)) {
-      fs.mkdirSync(timestampDir);
+    if (!fs.existsSync(backupDir)) {
+      fs.mkdirSync(backupDir);
     }
 
     fs.copyFileSync(filePath, backupLocation);

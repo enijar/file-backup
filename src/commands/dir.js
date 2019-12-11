@@ -1,6 +1,5 @@
 const fs = require('fs');
 const cliProgress = require('cli-progress');
-const _ = require('lodash');
 const database = require('../services/database');
 const filesystem = require('../services/filesystem');
 const backup = require('../services/backup');
@@ -12,8 +11,6 @@ module.exports = async dirPath => {
     process.exit(1);
   }
 
-  const clients = await database.Client.findAll();
-  const uuid = _.get(clients, '[0].uuid');
   const timestamp = Date.now();
 
   const files = filesystem.getFilesRecursively(dirPath);
@@ -26,7 +23,7 @@ module.exports = async dirPath => {
   for (let i = 0, totalFiles = files.length; i < totalFiles; i++) {
     const {filePath, fileName} = files[i];
     const fileHash = await hash.make(filePath);
-    const backupLocation = await backup.make(filePath, fileName, uuid, timestamp);
+    const backupLocation = await backup.make(filePath, fileName, timestamp);
     files[i] = {filePath, fileName, fileHash, backupLocation, timestamp};
     progress.update(i);
   }
