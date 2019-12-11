@@ -1,4 +1,5 @@
 const commander = require('commander');
+require('sqlite3');
 const bootstrap = require('./services/bootstrap');
 const program = new commander.Command();
 
