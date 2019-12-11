@@ -14,6 +14,7 @@ const program = new commander.Command();
   program.version('0.0.0');
 
   program.command('backup <backupDirectory>').action(require('./commands/backup')(client));
+  program.command('restore <timestamp>').action(require('./commands/restore')(client));
 
   program.parse(process.argv);
 })();

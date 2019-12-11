@@ -18,14 +18,14 @@ module.exports = client => async backupDirectory => {
 
   console.log('\nBacking up files...\n');
 
-  progress.start(files.length - 1, 0);
+  progress.start(files.length, 0);
 
   for (let i = 0, totalFiles = files.length; i < totalFiles; i++) {
     const {filePath, fileName} = files[i];
     const fileHash = await hash.make(filePath);
-    const backupLocation = await backup.make(filePath, fileName, path.join(client.backupDir, String(timestamp)));
+    const backupLocation = await backup.make(filePath, fileHash, path.join(client.backupDir, String(timestamp)));
     files[i] = {filePath, fileName, fileHash, backupLocation, timestamp};
-    progress.update(i);
+    progress.update(i + 1);
   }
 
   progress.stop();
