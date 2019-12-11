@@ -38,5 +38,5 @@ module.exports = client => async backupDirectory => {
     console.error(`Error saving backup data: ${err.message}`);
   }
 
-  console.log('Done');
+  console.log(`Backup complete, with timestamp of "${timestamp}"`);
 };
