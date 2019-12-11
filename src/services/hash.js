@@ -1,21 +1,18 @@
 const fs = require('fs');
-const XXHash = require('xxhash');
+const crypto = require('crypto');
 
 module.exports = {
   make(filePath) {
     return new Promise(resolve => {
-      const hasher = new XXHash(0xCAFEBABE);
+      const hash = crypto.createHash('sha1');
 
       fs.createReadStream(filePath)
         .on('data', data => {
-          hasher.update(data);
+          hash.update(data);
         })
         .on('end', () => {
-          resolve(hasher.digest());
+          resolve(hash.digest('hex'));
         });
     });
-  },
-  check(a, b) {
-    return a === b;
   },
 };

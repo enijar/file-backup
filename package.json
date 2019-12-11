@@ -1,5 +1,12 @@
 {
   "private": true,
+  "name": "file-backup",
+  "bin": {
+    "main": "src/index.js"
+  },
+  "scripts": {
+    "package": "npx pkg . --out-path dist"
+  },
   "dependencies": {
     "cli-progress": "^3.4.0",
     "commander": "^4.0.1",
@@ -7,7 +14,9 @@
     "lodash": "^4.17.15",
     "sequelize": "^5.21.2",
     "sqlite3": "^4.1.1",
-    "uuid": "^3.3.3",
-    "xxhash": "^0.3.0"
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "pkg": "^4.4.1"
   }
 }
