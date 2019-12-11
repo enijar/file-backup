@@ -12,6 +12,7 @@ File backup service written in NodeJS. Backs up files to another location on the
 - [ ] Make config configurable by user
 - [ ] 100% test coverage
 - [ ] Automate release cycle
+- [ ] Write Windows and Linux installation guide
 
 ### Installation (MacOS)
 
