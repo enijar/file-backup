@@ -3,3 +3,4 @@ bindings/
 .idea/
 .DS_Store
 package-lock.json
+.env
